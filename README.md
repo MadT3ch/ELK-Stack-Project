@@ -75,7 +75,7 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 - Filebeat
-- 
+
 These Beats allow us to collect the following information from each machine:
 - Filebeat monitors and logs data that you allow and transfers them to Elasticsearch for review and retention.
 
