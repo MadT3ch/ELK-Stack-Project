@@ -45,4 +45,4 @@
 ## db-[99:101]-node.example.com
 
 [elk]
-20.98.86.189 ansible_python_interpreter=/usr/bin/python3
+13.66.195.50 ansible_python_interpreter=/usr/bin/python3
