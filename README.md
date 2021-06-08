@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![TODO: Update the path with the name of your diagram](Diagrams/Elk-Stack-Project.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of [filebeat-playbook.yml](https://github.com/MadT3ch/ELK-Stack-Project/blob/main/Ansible/filebeat-playbook.yml)may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of [elk.yml](https://github.com/MadT3ch/ELK-Stack-Project/blob/main/Ansible/elk.yml) and [filebeat-playbook.yml](https://github.com/MadT3ch/ELK-Stack-Project/blob/main/Ansible/filebeat-playbook.yml) may be used to install only certain pieces of it, such as Filebeat.
 
 This document contains the following details:
 - Description of the Topology
@@ -45,23 +45,24 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes              | 10.0.0.4 / 71.90.161.251 |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes              | 71.90.161.251 |
+| Web-1         | No           |      10.0.0.4    |     
+| Web-2         | No                    | 10.0.0.4 |
+| Elk-VM        | No          | 10.0.0.4
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because using Ansible for provisioning, configuration management, and application deployment in an Infrastructure as Code (IAC) scenario accomplishes the following:
+ - Automated Configuration
+ - Configuration Management
+ - It's agentless
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![TODO: Update the path with the name of your screenshot of docker ps output](/Diagrams/docker_ps.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
