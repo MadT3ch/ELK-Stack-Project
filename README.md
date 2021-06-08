@@ -89,5 +89,15 @@ SSH into the control node and follow the steps below:
 - The Playbook is the filebeat-playbook.yml that is copied to the etc/anisbile/files
 - Update etc/ansible/filebeat-config.yml file in order to have Ansible run on a specific machine.
 - Navigate to http://13.66.195.50:5601/app/kibana. If everything worked correctly you will see the web front end.
+- **Note** Your ip address will differ slightly based on the public IP assigned by Azure.
+![TODO: I added my own screenshot here](Diagrams/kibana_Front_end.PNG)
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- Run ssh KingAdmin@40.76.88.239
+- **NOTE** If you used a different account name, you would use that here. 
+- Run sudo docker container list -a to see the name of your container that you will start
+- Run sudo docker container start happy_benz (*happy_benz* in my case. You could rename it by using docker rename **happy_benz** **ansible**)
+- Run sudo docker container attach happy_benz (*happy_benz*)
+- Get the SSH Key from the Ansible Container to copy into Jump Box cat ~/.ssh/id_rsa.pub
+- Added this public key as a login option on your Azure VM
+- Add new VM to hosts file using the python3-pip service <10.1.0.4> ansible_python_interpreter=/usr/bin/python
+- Create Anible Playbook
